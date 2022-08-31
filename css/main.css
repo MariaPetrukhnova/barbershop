@@ -1,0 +1,52 @@
+:root {
+    --main-color:#555555;
+    --title-color: #303030;
+    --secondary-color: #9DA4BD;
+    --accent-color: #FF6C00;
+    --white-color: #ffffff;
+    --main-bcg: #ffffff;
+    --secondary-bcg: #F7F7F7;
+}
+body {
+    font-family: 'Open Sans', Montserrat, DM Sans, sans-serif;
+    color: var(--main-color);
+    background-color: var(--main-bcg)
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit
+}
+
+.wrapper {
+    width: 1170px;
+}
+
+.page-header {
+    background-color: #555555;
+}
+
+.nav-item, .tel-link {
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.1em;
+}
+
+.tel-link {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-item:hover, .nav-item:focus, .nav-item:active,
+.tel-link:hover, .tel-link:focus, .tel-link:active {
+    color: var(--accent-color);
+}
