@@ -10,7 +10,7 @@
 body {
     font-family: 'Open Sans', Montserrat, DM Sans, sans-serif;
     color: var(--main-color);
-    background-color: var(--main-bcg)
+    background-color: var(--main-bcg);
     box-sizing: border-box;
 }
 
@@ -49,4 +49,172 @@ h1, h2, h3, h4, h5, h6, p, ul {
 .nav-item:hover, .nav-item:focus, .nav-item:active,
 .tel-link:hover, .tel-link:focus, .tel-link:active {
     color: var(--accent-color);
+}
+
+.site-btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    padding: 12px 20px;
+    min-width: 160px;
+}
+
+.site-btn:hover, .site-btn:focus, .site-btn:active {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.site-btn.dark {
+    color: var(--white-color)
+}
+
+.site-btn.light {
+    color: var(--title-color)
+}
+
+.social-item {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.2em;
+    color: var(--title-color);
+}
+.social-item:hover, .social-item:focus, .social-item:active {
+    color: var(--accent-color);
+}
+
+
+.hero-descr, .about-descr, .pricing-descr, .benefits-descr, .team-descr, .worktypes-descr, .schedule-descr {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    text-transform: uppercase;
+}
+
+.hero-descr, .pricing-descr {
+    color: var(--secondary-color);
+    opacity: 60%;
+}
+.about-descr, .pricing-descr, .benefits-descr, .team-descr, .worktypes-descr {
+    color: var(--title-color);
+}
+.schedule-descr {
+    color: var(--white-color);
+}
+.hero-title {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1.18;
+    letter-spacing: 0.05em;
+    color: var(--white-color);
+}
+.hero-text, .about-text, .pricelist-text, .benefits-text {
+    font-size: 18px;
+    line-height: 1.67;    
+    letter-spacing: 0.02em;
+}
+
+.hero-text, .pricelist-text {
+    color: var(--secondary-color);
+}
+
+
+.about-title, .pricing-title, .benefits-title, .team-title, .worktypes-title, .booking-title, .contacts-title {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.16;
+    letter-spacing: 0.05em;
+}
+.about-title, .benefits-title, .team-title, .worktypes-title {
+    color: var(--title-color);
+}
+
+.pricing-title, .booking-title, .contacts-title {
+    color: var(--white-color);
+}
+
+.about-story {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: 0.02em;
+}
+.benefits-card{
+    color: var(--title-color);
+}
+
+.benefits-q-ty {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.36;
+    letter-spacing: 0.05em;
+}
+
+.benefits-q-ty>sup {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.38;
+    color: var(--accent-color);
+}
+
+.benefits-tips {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+}
+
+.barber-name {
+    font-size: 18px;
+    line-height: 1.38;
+    letter-spacing: 0.02em;
+    color: var(--title-color);
+}
+
+.barber-position {
+    font-size: 14px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+}
+.booking-input::placeholder,
+.booking-comment::placeholder {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.38;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    opacity: 40%;
+    border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+}
+
+.adress-link, .contacts-link, .mail-link, .schedule {
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 0.02em;
+    font-style: normal;
+    color: var(--secondary-color);
+}
+.adress-link, .contacts-link {
+    text-decoration: none;
+}
+
+.adress-link {
+    font-weight: 700;
+}
+
+.copyright {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.2em;
+    color: var(--secondary-color);
 }
