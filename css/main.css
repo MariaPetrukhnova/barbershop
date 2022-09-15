@@ -363,6 +363,26 @@ img {
     font-weight: 700;
 }
 
+.hidden-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.worktypes-descr {
+    margin-bottom: 0;
+}
+
+.worktypes-block.flex-block {
+    justify-content: space-between;
+    margin-top: 44px;
+}
+
 .copyright {
     font-weight: 600;
     font-size: 11px;
