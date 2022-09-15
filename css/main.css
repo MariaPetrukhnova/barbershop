@@ -7,13 +7,16 @@
     --main-bcg: #ffffff;
     --secondary-bcg: #F7F7F7;
     --hero-overlay: rgba(25, 28, 38, 0.2);
+    --pretitle-color: rgba(157, 164, 189, 0.6);
+    --price-bcg: #111319;
+
 }
 body {
     font-family: 'Open Sans', Montserrat, DM Sans, sans-serif;
     color: var(--main-color);
     background-color: var(--main-bcg);
-    box-sizing: border-box;
 }
+
 
 h1, h2, h3, h4, h5, h6, p, ul {
     list-style: none;
@@ -26,9 +29,29 @@ h1, h2, h3, h4, h5, h6, p, ul {
     color: inherit
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumb {
+    font-size: 0;
+    flex-shrink: 0;
+}
+
 .container {
     width: 1200px;
     padding: 0 15px;
+}
+
+.flex-block {
+    display: flex;
+    align-items: stretch;
+}
+
+.section {
+    padding: 120px 0;
 }
 
 .page-header{
@@ -40,7 +63,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: flex;
     align-items: center;
     padding-top: 32px;
-    padding-left: 55px;
+    padding-left: 30px;
     box-sizing: border-box;
 }
 
@@ -100,12 +123,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin-left: auto;
 }
 
-.site-btn:hover, .site-btn:focus, .site-btn:active {
-    color: var(--white-color);
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
 .site-btn.dark {
     color: var(--white-color)
 }
@@ -114,31 +131,39 @@ h1, h2, h3, h4, h5, h6, p, ul {
     color: var(--title-color)
 }
 
+.site-btn:hover, .site-btn:focus, .site-btn:active {
+    color: var(--white-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
 .social-list {
     display: flex;
     flex-direction: column;
+    margin-top: auto;
 }
 
 .social-item {
+    display: flex;
     font-weight: 600;
     font-size: 11px;
     line-height: 1.36;
     letter-spacing: 0.2em;
     color: var(--title-color);
-    margin: 0 40px;
 }
-.social-item:hover, .social-item:focus, .social-item:active {
-    color: var(--accent-color);
+.social-item:not(:last-child) {
+    margin-right: 40px;
 }
 
-.hero {
-    background-color: var(--main-bcg);
+.social-item:hover, .social-item:focus, .social-item:active {
+    color: var(--accent-color);
 }
 
 .hero .container {
     display: flex;
     padding: 272px 0 208px;
-    background-image: url(../images/Slider1.jpg), url(../images/works-img2.jpg), url(../images/works-img3.jpg);
+    background-image: linear-gradient(to right, var(--white-color) 11%, var(--hero-overlay) 11%, var(--hero-overlay) 100%),
+    url(../images/Slider1.jpg), url(../images/Slider2.jpg), url(../images/Slider3.jpg);
     background-repeat: no-repeat;
     background-position: 100% 0;
 }
@@ -160,12 +185,39 @@ h1, h2, h3, h4, h5, h6, p, ul {
     text-transform: uppercase;
 }
 
-.hero-descr, .pricing-descr {
-    color: var(--secondary-color);
-    opacity: 60%;
+.hero-descr::before,
+.pricing-descr::before {
+    content: '';
+    display: block;
+    align-self: center;
+    background-color: var(--pretitle-color);
+    height: 1px;
+    width: 60px;
+    margin-right: 20px;
 }
-.about-descr, .pricing-descr, .benefits-descr, .team-descr, .worktypes-descr {
+
+.about-descr::before, 
+.benefits-descr::before,
+.team-descr::before,
+.worktypes-descr::before {
+    content: '';
+    display: block;
+    align-self: center;
+    background-color: var(--title-color);
+    height: 1px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+.hero-descr, .pricing-descr {
+    color: var(--pretitle-color);
+    display: flex;
+    margin-bottom: 20px;
+}
+.about-descr, .benefits-descr, .team-descr, .worktypes-descr {
     color: var(--title-color);
+    display: flex;
+    margin-bottom: 20px;
 }
 .schedule-descr {
     color: var(--white-color);
@@ -189,6 +241,16 @@ h1, h2, h3, h4, h5, h6, p, ul {
     color: var(--secondary-color);
 }
 
+.social-item:first-child::before {
+    content: '';
+    display: block;
+    align-self: center;
+    background-color: var(--title-color);
+    height: 1px;
+    width: 60px;
+    margin-right: 40px;
+}
+
 .social-list {
     display: flex;
     justify-content: center;
@@ -203,9 +265,28 @@ h1, h2, h3, h4, h5, h6, p, ul {
     font-size: 42px;
     line-height: 1.16;
     letter-spacing: 0.05em;
+    margin-bottom: 20px;
 }
 .about-title, .benefits-title, .team-title, .worktypes-title {
     color: var(--title-color);
+}
+
+.img-thumb:not(:last-child) {
+    margin-right: 30px;
+}
+
+.about-content {
+    width: 48%;
+    margin-left: 30px;
+}
+
+.pricing {
+    background-image: url(../images/price-bcg.png), 
+    linear-gradient(to right, var(--price-bcg) 0%, var(--price-bcg) 100%);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: contain;
+    max-width: 1600px;
 }
 
 .pricing-title, .booking-title, .contacts-title {
@@ -216,6 +297,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     font-size: 14px;
     line-height: 1.86;
     letter-spacing: 0.02em;
+    margin: 20px 0 42px;
 }
 .benefits-card{
     color: var(--title-color);
@@ -262,8 +344,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     line-height: 1.38;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--secondary-color);
-    opacity: 40%;
+    color: var(--pretitle-color);
     border-bottom: 1px solid rgba(157, 164, 189, 0.4);
 }
 
@@ -288,4 +369,13 @@ h1, h2, h3, h4, h5, h6, p, ul {
     line-height: 1.36;
     letter-spacing: 0.2em;
     color: var(--secondary-color);
+}
+
+.page-footer .container {
+    padding: 56px 215px;
+    justify-content: space-between;
+}
+
+.page-footer .social-list {
+    transform: none;
 }
