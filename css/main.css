@@ -8,6 +8,8 @@
     --secondary-bcg: #F7F7F7;
     --hero-overlay: rgba(25, 28, 38, 0.2);
     --pretitle-color: rgba(157, 164, 189, 0.6);
+    --form-border: rgba(157, 164, 189, 0.4);
+    --gap-color: rgba(157, 164, 189, 0.12);
     --price-bcg: #111319;
 
 }
@@ -43,6 +45,7 @@ img {
 .container {
     width: 1200px;
     padding: 0 15px;
+    margin: 0 auto;
 }
 
 .flex-block {
@@ -52,10 +55,13 @@ img {
 
 .section {
     padding: 120px 0;
+    margin: 0 auto;
 }
 
 .page-header{
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     color: transparent;
 }
 
@@ -65,6 +71,7 @@ img {
     padding-top: 32px;
     padding-left: 30px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .logo{
@@ -78,6 +85,8 @@ img {
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.1em;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-wrap {
@@ -87,6 +96,7 @@ img {
     text-decoration: none;
     text-transform: uppercase;
     margin-right: 40px;
+    
 }
 
 .nav-item:hover, .nav-item:focus, .nav-item:active,
@@ -121,6 +131,11 @@ img {
     padding: 12px 20px;
     min-width: 160px;
     margin-left: auto;
+
+    transition: 
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)/*,
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)*/;
 }
 
 .site-btn.dark {
@@ -141,6 +156,7 @@ img {
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    margin-left: 30px;
 }
 
 .social-item {
@@ -150,6 +166,8 @@ img {
     line-height: 1.36;
     letter-spacing: 0.2em;
     color: var(--title-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-item:not(:last-child) {
     margin-right: 40px;
@@ -175,7 +193,6 @@ img {
 .hero-content {
     flex-grow: 1;
     margin-left: 100px;
-
 }
 
 .hero-descr, .about-descr, .pricing-descr, .benefits-descr, .team-descr, .worktypes-descr, .schedule-descr {
@@ -271,7 +288,7 @@ img {
     color: var(--title-color);
 }
 
-.img-thumb:not(:last-child) {
+.about .img-thumb:not(:last-child) {
     margin-right: 30px;
 }
 
@@ -291,6 +308,42 @@ img {
 
 .pricing-title, .booking-title, .contacts-title {
     color: var(--white-color);
+    margin-bottom: 44px;
+}
+
+.pricelist-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 44px;
+}
+
+.pricelist.left {
+    margin-right: 30px;
+}
+
+.pricelist {
+    width: 570px;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+
+.pricelist-item {
+    display: flex;
+}
+
+.pricelist-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-gap {
+    flex-grow: 1;
+    border-bottom: 1px solid var(--gap-color);
+    margin: 0 12px;
+}
+
+.pricing .site-btn {
+    display: block;
+    margin: 0 auto;
 }
 
 .about-story {
@@ -299,18 +352,45 @@ img {
     letter-spacing: 0.02em;
     margin: 20px 0 42px;
 }
-.benefits-card{
+
+.benefits-card {
+    width: 170px;
+    max-height: 133px;
+    padding: 20px 24px;
     color: var(--title-color);
+    background-color: var(--secondary-bcg);
+    text-align: center;
+}
+
+.benefits-card:nth-child(odd) {
+    margin-right: 30px;
+}
+
+.benefits-card:nth-child(even) {
+    margin-top: 30px;
+}
+
+.benefits .container {
+    display: flex;
+    padding: 0 70px 0 100px;
+}
+
+.benefits-block {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .benefits-q-ty {
+    display: flex;
+    justify-content: center;
     font-weight: 700;
     font-size: 42px;
-    line-height: 1.36;
     letter-spacing: 0.05em;
 }
 
 .benefits-q-ty>sup {
+    position: static;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.38;
@@ -321,6 +401,28 @@ img {
     font-weight: 600;
     font-size: 11px;
     line-height: 1.36;
+    margin-top: 6px;
+}
+
+.benefits-contain {
+    width: 50%;
+    margin-left: 130px;
+}
+
+.team {
+    background-color: var(--secondary-bcg);
+}
+
+.barber-card {
+    width: 370px;
+}
+
+.barber-card:not(:last-child) {
+    margin-right: 30px;
+}
+
+.card-content{
+    margin-top: 30px;
 }
 
 .barber-name {
@@ -328,15 +430,182 @@ img {
     line-height: 1.38;
     letter-spacing: 0.02em;
     color: var(--title-color);
+    text-align: center;
 }
 
 .barber-position {
+    margin: 8px auto 30px;
     font-size: 14px;
     line-height: 1.36;
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--accent-color);
 }
+
+.sm-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.sm-item {
+    width: 44px;
+    height: 44px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+}
+
+.sm-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.sm-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.sm-icon {
+    fill: var(--title-color);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sm-link:hover .sm-icon, 
+.sm-link:focus .sm-icon, 
+.sm-link:active .sm-icon {
+    fill: var(--accent-color);
+}
+
+.booking {
+    width: 50%;
+    background-color: var(--price-bcg);
+    padding: 120px 30px 120px 0;
+}
+
+.booking-content {
+    width: 600px;
+    margin-left: auto;
+}
+
+.booking-input {
+    width: 270px;
+    background-color: transparent;
+    color: var(--white-color);
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid var(--form-border);
+
+    transition: 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.booking-input:focus, .booking-input:active,
+.booking-comment:focus, .booking-comment:active { 
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid var(--white-color);
+}
+
+.booking-input:focus::placeholder, .booking-input:active::placeholder,
+.booking-comment:focus::placeholder, .booking-comment:active::placeholder {
+    color: var(--white-color);
+}
+
+.booking-input:first-child {
+    margin-right: 30px;
+}
+
+.booking-comment {
+    display: block;
+    width: 570px;
+    height: 76px;
+    background-color: transparent;
+    color: var(--white-color);
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid var(--form-border);
+    resize: none;
+    margin: 44px auto 44px 0;
+
+    transition:
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts {
+    width: 50%;
+    padding-left: 100px;
+    background-color: var(--price-bcg);
+    background-image: url(../images/contact-bcg.png);
+    background-size: cover;
+    background-position: top left;
+}
+
+.contacts-block {
+    width: 270px;
+    margin-bottom: 70px;
+    color: var(--secondary-color);
+    }
+
+.contacts-item {
+    display: flex;
+}
+
+.contacts-item:first-child::before {
+    content: '';
+    align-self: baseline;
+    background-image: url(../images/map-pin.svg);
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+}
+
+.contacts-item:nth-child(2)::before {
+    content: '';
+    align-self: center;
+    background-image: url(../images/phone.svg);
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+}
+
+.contacts-item:last-child::before {
+    content: '';
+    align-self: center;
+    background-image: url(../images/mail.svg);
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+
+}
+
+.contacts-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.schedule-descr {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.schedule-descr::before {
+    content: '';
+    display: block;
+    align-self: center;
+    background-color: var(--white-color);
+    height: 1px;
+    width: 60px;
+    margin-right: 20px;
+}
+
 .booking-input::placeholder,
 .booking-comment::placeholder {
     font-weight: 600;
@@ -345,7 +614,6 @@ img {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--pretitle-color);
-    border-bottom: 1px solid rgba(157, 164, 189, 0.4);
 }
 
 .adress-link, .contacts-link, .mail-link, .schedule {
@@ -382,6 +650,7 @@ img {
     justify-content: space-between;
     margin-top: 44px;
 }
+
 
 .copyright {
     font-weight: 600;
