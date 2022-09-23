@@ -178,6 +178,8 @@ img {
 }
 
 .hero .container {
+    position: relative;
+
     display: flex;
     padding: 272px 0 208px;
     background-image: linear-gradient(to right, var(--white-color) 11%, var(--hero-overlay) 11%, var(--hero-overlay) 100%),
@@ -275,6 +277,47 @@ img {
     align-items: center;
     transform: rotate(270deg);
     }
+
+.slider-block {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 40px 30px;
+    }
+.slider-btn {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    min-width: 60px;
+    min-height: 24px;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    border: none;
+    color: var(--pretitle-color);
+    border-bottom: 1px solid var(--pretitle-color);
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-btn:first-child {
+    margin-right: 30px;
+    justify-content: start;
+}
+
+.slider-btn:last-child {
+    justify-content: end;
+}
+
+.slider-btn:hover, .slider-btn:focus, .slider-btn:active {
+    color: var(--white-color);
+    border-bottom: 1px solid var(--white-color);
+}
 
 .about-title, .pricing-title, .benefits-title, .team-title, .worktypes-title, .booking-title, .contacts-title {
     font-family: 'Raleway';
